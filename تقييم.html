@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تقييم استوديو تسويق جلاميرا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #211a38;
+      --accent: #6740d8;
+      --accent-50: #f2ecff;
+      --success: #15805f;
+      --success-50: #e8f7ef;
+      --warning: #a45e13;
+      --warning-50: #fff3dd;
+      --danger: #dc2626;
+      --surface: #faf9fc;
+      --line: #e9e5f0;
+      --muted: #766e89;
+      --card: #fff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--surface); color: var(--navy); font-family: "IBM Plex Sans Arabic", sans-serif; }
+    body { min-height: 100vh; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px; }
+    header.hero {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 28px;
+      padding: 36px 32px;
+      margin-bottom: 28px;
+    }
+    header.hero p { margin: 8px 0 0; color: #d8d0f0; line-height: 1.8; }
+    header.hero h1 { margin: 0; font-size: 30px; line-height: 1.35; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .chip {
+      display: inline-flex; align-items: center;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.14);
+      color: #fff; border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 700;
+    }
+    .scores { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 22px 0 28px; }
+    @media (min-width: 720px) { .scores { grid-template-columns: repeat(4, 1fr); } }
+    .score {
+      background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px 14px;
+      box-shadow: 0 2px 9px #352b5708;
+    }
+    .score b { display: block; font-size: 28px; color: var(--accent); }
+    .score span { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); font-weight: 600; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 22px;
+      padding: 22px 24px; margin-bottom: 16px; box-shadow: 0 2px 9px #352b5708;
+    }
+    h2 { margin: 0 0 12px; font-size: 20px; }
+    h3 { margin: 20px 0 8px; font-size: 16px; }
+    p, li { line-height: 1.9; font-size: 15px; }
+    ul { padding-inline-start: 18px; }
+    .verdict {
+      background: var(--accent-50); border: 1px solid #ddd0ff; border-radius: 22px;
+      padding: 22px 24px; margin-bottom: 16px;
+    }
+    .warn { background: var(--warning-50); border-color: #f0ddb4; }
+    .ok { background: var(--success-50); border-color: #cde8d8; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: start; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; }
+    .tag {
+      display: inline-block; border-radius: 999px; padding: 3px 10px;
+      font-size: 11px; font-weight: 700;
+    }
+    .tag-strong { background: var(--success-50); color: var(--success); }
+    .tag-good { background: var(--accent-50); color: var(--accent); }
+    .tag-mid { background: var(--warning-50); color: var(--warning); }
+    .tag-weak { background: #f3f0f6; color: var(--muted); }
+    footer { margin-top: 28px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
+    button {
+      border: 0; background: var(--accent); color: #fff; font-weight: 700;
+      border-radius: 11px; padding: 10px 16px; cursor: pointer; font-family: inherit;
+    }
+    button.ghost { background: #fff; color: var(--accent); border: 1px solid #ddd0ff; }
+    @media print {
+      body { background: #fff; }
+      header.hero { break-inside: avoid; }
+      .actions { display: none; }
+      .card, .verdict { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>تقييم استوديو تسويق جلاميرا</h1>
+      <p>مراجعة صريحة لما بُني حتى 23 سبتمبر 2026. هذا استوديو تصميم وتجربة لمراجعة منتج التسويق، وليس نظام تسويق حي.</p>
+      <div class="meta">
+        <span class="chip">نموذج تفاعلي مربوط بالدومين</span>
+        <span class="chip">عربي RTL + إنجليزي</span>
+        <span class="chip">بدون إرسال حي للقنوات</span>
+      </div>
+    </header>
+
+    <div class="actions">
+      <button type="button" onclick="window.print()">طباعة أو حفظ PDF</button>
+      <button type="button" class="ghost" onclick="copyLink()">نسخ ملخص للتواصل</button>
+    </div>
+
+    <div class="scores">
+      <div class="score"><b>8/10</b><span>المنتج وتجربة الاستخدام</span></div>
+      <div class="score"><b>9/10</b><span>الصدق مع الواقع</span></div>
+      <div class="score"><b>8/10</b><span>مطابقة كيانات جلاميرا</span></div>
+      <div class="score"><b>7/10</b><span>جودة الكود</span></div>
+    </div>
+
+    <div class="verdict">
+      <h2>الحكم العام</h2>
+      <p><strong>كاستوديو مراجعة وتوحيد تجربة الاستخدام: ناجح (8/10).</strong> يحوّل تسويق جلاميرا من شاشات متفرّقة إلى لغة واحدة: هدف → أداة → جمهور → قناة → قيد واضح.</p>
+      <p><strong>كبديل حي لشاشة التسويق الحالية: غير جاهز (5/10).</strong> لا حفظ حقيقي، لا إرسال، لا ربط فواتير أو عملاء حي، ولا أمان تشغيل. يُقدَّم كنموذج تفاعلي للمراجعة الداخلية، لا كإطلاق.</p>
+    </div>
+
+    <div class="card">
+      <h2>ماذا صُنع</h2>
+      <p>واجهة عربية كاملة فوق كيانات جلاميرا، تشمل:</p>
+      <ul>
+        <li>العروض والكوبونات، بمسار إنشاء موحّد وسؤال/جواب.</li>
+        <li>الباقات ومجموعات الخدمات، مع تسعير وضريبة وتوزيع السعر.</li>
+        <li>بطاقات الهدايا: إنشاء، إصدار، وسجل.</li>
+        <li>الرسائل والتنبيهات: تفعيل، قوالب، أتمتة، وقنوات واتساب/SMS بنص مستقل.</li>
+        <li>التقييمات: المتابعة والإعدادات من قسم واحد، مع زر دخول من إعدادات التسويق.</li>
+        <li>نقاط الولاء: سياسة، احتساب، استبدال، OTP، أرصدة العملاء، والحركة على الفواتير.</li>
+        <li>إعدادات تسويق بشريط تنقّل ثابت بين ثمانية أقسام.</li>
+        <li>تحويلات للروابط القديمة، ونصوص عربية/إنجليزية.</li>
+      </ul>
+      <p>المنطق التجاري (التواريخ، الضريبة، تسعير الباقة، النقاط، جاهزية القناة) موجود في طبقة منفصلة، وليس مدفونًا داخل الشاشات.</p>
+    </div>
+
+    <div class="card">
+      <h2>اكتمال الوحدات</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>الوحدة</th>
+            <th>الحالة</th>
+            <th>الملاحظة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>العروض والكوبونات</td>
+            <td><span class="tag tag-strong">الأقوى</span></td>
+            <td>أقرب وحدة لمنتج جاهز للمراجعة والتنفيذ.</td>
+          </tr>
+          <tr>
+            <td>الباقات والمجموعات</td>
+            <td><span class="tag tag-strong">قوي جدًا</span></td>
+            <td>التسعير والضريبة وتوزيع السعر شغل جاد.</td>
+          </tr>
+          <tr>
+            <td>بطاقات الهدايا</td>
+            <td><span class="tag tag-strong">قوي</span></td>
+            <td>مسار إنشاء وإصدار وسجل أوضح من التشتت السابق.</td>
+          </tr>
+          <tr>
+            <td>الرسائل والتنبيهات</td>
+            <td><span class="tag tag-good">جيد</span></td>
+            <td>المكان اتظبط في شاشة واحدة. المحتوى لكل قناة ما زال بسيطًا.</td>
+          </tr>
+          <tr>
+            <td>التقييمات</td>
+            <td><span class="tag tag-good">جيد</span></td>
+            <td>الإعدادات اتلمّت. التجربة التشغيلية ما زالت عرض بيانات.</td>
+          </tr>
+          <tr>
+            <td>نقاط الولاء</td>
+            <td><span class="tag tag-good">جيد كبداية</span></td>
+            <td>يغطي السياسة والرصيد والفواتير. ليس محرك نقاط حيًا.</td>
+          </tr>
+          <tr>
+            <td>الحملات</td>
+            <td><span class="tag tag-mid">متوسط</span></td>
+            <td>تصميم نية الإرسال من غير إرسال فعلي.</td>
+          </tr>
+          <tr>
+            <td>التقارير / الشرائح / التحليلات</td>
+            <td><span class="tag tag-weak">ضعيف</span></td>
+            <td>كتالوج أو شاشات لاحقة فقط.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>ماذا أُنجز صح</h2>
+      <ul>
+        <li>توحيد المعالجات: سؤال وجواب بدل فورم طويل، واختيار موحّد للفروع والعملاء والخدمات والمنتجات.</li>
+        <li>عدم اختلاق نجاح تشغيلي: واتساب وSMS غير مربوطين، والحملة تُحفظ محليًا، والتقييم الفارغ ليس 0 من 5.</li>
+        <li>النماذج مربوطة بكيانات جلاميرا الحقيقية (العروض، القوالب، تنبيهات الشركة، الولاء وOTP).</li>
+        <li>نقل الإعدادات لمكانها: الرسائل من الإشعارات، التقييم من التقييمات، الولاء من الولاء، مع بقاء شريط الإعدادات للتنقّل.</li>
+      </ul>
+    </div>
+
+    <div class="card warn">
+      <h2>الحدود والمخاطر</h2>
+      <ul>
+        <li>بيانات التسويق محلية وتعود للبيانات التجريبية بعد إعادة التحميل.</li>
+        <li>لا واجهة برمجية حية، ولا صلاحيات حقيقية على الأزرار.</li>
+        <li>الإعدادات صارت خريطة أبواب أكثر من مكان شغل في بعض الأقسام.</li>
+        <li>النظرة العامة ما زالت كتالوج أهداف أكثر من لوحة تشغيل.</li>
+        <li>أول ربط حقيقي سيُظهر فروقات في الحقول، الصلاحيات، وتعدد الشركات والفروع.</li>
+      </ul>
+    </div>
+
+    <div class="card ok">
+      <h2>ماذا يلزم قبل التنفيذ الحي</h2>
+      <ol>
+        <li>عقد تسليم واضح: أي الشاشات تنتقل كما هي، وأيها نموذج فقط.</li>
+        <li>طبقة ربط حقيقية مع حفظ وصلاحيات وتعدد فروع.</li>
+        <li>تقليل الاستوديو: الإعدادات فهرس قصير، والنظرة العامة تشغيل يومي.</li>
+        <li>اختبارات واجهة على العرض والباقة والرسالة واستبدال النقاط مع OTP.</li>
+        <li>الشرائح والتحليلات: إما بيانات حية، أو تُحذف من القائمة حتى تستحق الظهور.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>الخلاصة للمشاركة</h2>
+      <p>اتعمل أفضل نسخة ممكنة لتصميم تسويق جلاميرا من غير فتح النظام الحي. القيمة كبيرة للمراجعة الداخلية وتثبيت قرارات الشكل. القيمة التشغيلية تظهر فقط لما نفس الشاشات تقعد على البيانات الحقيقية من غير كسر الصدق اللي اتحافظ عليه: الشكل جاهز، والقناة مش شغالة إلا بعد الربط.</p>
+    </div>
+
+    <footer>
+      استوديو التسويق — تقييم داخلي بتاريخ 23 سبتمبر 2026.<br />
+      الملف مستقل: يمكن فتحه في المتصفح، إرساله، أو تصديره PDF من الطباعة.
+    </footer>
+  </div>
+  <script>
+    function copyLink() {
+      const text = "تقييم استوديو تسويق جلاميرا: ناجح كاستوديو مراجعة وتوحيد UX (8/10)، وغير جاهز كبديل حي (5/10). العروض والباقات والهدايا الأقوى. الرسائل والتقييم والولاء اتلمّوا في أماكنهم. مفيش إرسال حي ولا حفظ حقيقي بعد. يُقدَّم كنموذج تفاعلي للمراجعة، لا كإطلاق.";
+      navigator.clipboard.writeText(text).then(() => {
+        alert("تم نسخ الملخص.");
+      }).catch(() => {
+        alert(text);
+      });
+    }
+  </script>
+</body>
+</html>
