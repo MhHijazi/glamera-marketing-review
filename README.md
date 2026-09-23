@@ -1,3 +1,1 @@
-# معاينة مراجعة — استوديو تسويق جلاميرا
-
-هذه صفحة مراجعة للتجربة فقط. المصدر الخاص غير منشور هنا.
+# Glamera Marketing Studio — public review build (compiled only, no source).
