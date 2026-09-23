@@ -1,5 +1,5 @@
 # معاينة مراجعة — استوديو تسويق جلاميرا
 
-هذه صفحة مراجعة للتجربة فقط. المصدر الخاص غير منشور هنا.
+افتح: https://mhhijazi.github.io/glamera-marketing-review/marketing
 
-افتح: https://mhhijazi.github.io/glamera-marketing-review/
+المصدر الخاص غير منشور هنا.
